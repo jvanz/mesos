@@ -3376,6 +3376,8 @@ void Master::accept(
         ++metrics->messages_launch_tasks;
       } else {
         ++metrics->messages_decline_offers;
+        LOG(WARNING) << "Framework " << framework->id() << " accepted the offer"
+                     << " but did not define tasks to execute";
       }
     }
 
